@@ -10,7 +10,7 @@ Australian Bank State Branch number enricher used for validating and looking up 
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [API Reference](#api-reference)
+- [Background](#background)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -32,6 +32,8 @@ from bsb import to_bank_info
 
 result = to_bank_info(bsb="082055")
 
+print(result)
+
 # >>> BankInfo(
 # ...     prefix_rule=BSBPrefixRule(key="NAB", abbreviation="National Australia Bank Limited", bsb_prefixes=["08"]),
 # ...     directory_entry=BSBDirectoryRow(
@@ -49,14 +51,10 @@ result = to_bank_info(bsb="082055")
 
 ```
 
-## API Reference
+## Background
+A BSB, or Bank State Branch number, is a six-digit code used to identify the specific branch of an Australian bank or financial institution. The BSB is normally used in association with the account number system used by each financial institution. 
 
-The main functions in BSB Lookup are:
-
-- `to_bank_info`: Converts a BSB number to detailed bank information.
-- [Other functions and classes with brief descriptions]
-
-For full documentation, visit [Link to Documentation].
+<img width="400" alt="image" src="https://github.com/ilankessler/bsb-lookup/assets/11990626/e026f52e-5e0b-43a5-b124-bfa65d84f3f1">
 
 ## Contributing
 
@@ -75,4 +73,4 @@ This project is licensed under the [MIT License](https://github.com/ilankessler/
 
 ## Contact
 
-For support or queries, reach out to ilan@refundid.com or join our [Community Forum/Discord](#link-to-community-platform).
+For support or queries, reach out to ilan@refundid.com
