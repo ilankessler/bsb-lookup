@@ -3,7 +3,7 @@
 A library designed to enrich BSB numbers with additional information.
 """
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 
 from bsb.bank_info import dataset as dataset
 from bsb.bank_info import to_bank_info as to_bank_info
