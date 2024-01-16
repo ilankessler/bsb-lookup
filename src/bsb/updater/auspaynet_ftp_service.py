@@ -2,7 +2,7 @@ from ftplib import FTP
 BASE_DIR = "/~auspaynetftp/bsb"
 
 
-def fetch_latest_file(prefix: str, file_type: str):
+def fetch_latest_file(prefix: str, file_type: str) -> (bytearray, str):
     with FTP("bsb.hostedftp.com") as ftp:
         ftp.login()
 
@@ -17,9 +17,9 @@ def fetch_latest_file(prefix: str, file_type: str):
         )
 
         if matching_filename is None:
-            return None
+            raise "Unable to find matching file"
 
         bytes_file = bytearray()
         ftp.retrbinary(f"RETR {BASE_DIR}/{matching_filename}", lambda data: bytes_file.extend(data))
 
-        return bytes_file
+        return bytes_file, matching_filename
