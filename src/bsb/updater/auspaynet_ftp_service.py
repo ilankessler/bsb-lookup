@@ -8,7 +8,7 @@ def fetch_latest_file(prefix: str, file_type: str) -> (bytearray, str):
 
         files = ftp.mlsd(BASE_DIR)
 
-        ordered_files = sorted(files, key=lambda x: x[1]['modify'])
+        ordered_files = sorted(files, reverse=True, key=lambda x: x[1]['modify'])
 
         matching_filename = next(
             (filename for filename, _ in ordered_files if
