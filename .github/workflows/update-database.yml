@@ -23,7 +23,7 @@ jobs:
         working-directory: ./src/bsb/
         run: python ./updater/updater.py
       - id: get-date
-        run: echo "name=date::$(date +'%Y-%m-%d') >> $GITHUB_OUTPUT"
+        run: echo "date=$(date +'%Y-%m-%d') >> $GITHUB_OUTPUT"
       - uses: peter-evans/create-pull-request@v5
         id: raise-pr
         with:
