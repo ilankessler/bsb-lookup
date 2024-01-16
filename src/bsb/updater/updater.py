@@ -1,8 +1,8 @@
-from auspaynet_ftp_service import AuspaynetFTPService
+from auspaynet_ftp_service import fetch_latest_file
 
 
 def _update_file(src_prefix: str, src_type: str, dest: str) -> None:
-    auspaynet_file: bytes = AuspaynetFTPService.fetch_latest_file(prefix=src_prefix, file_type=src_type)
+    auspaynet_file: bytes = fetch_latest_file(prefix=src_prefix, file_type=src_type)
 
     with open(dest, 'wb') as f:
         f.write(auspaynet_file)
