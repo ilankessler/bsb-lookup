@@ -15,9 +15,11 @@ def _update_file(src_prefix: str, src_type: str, dest: str) -> str:
 
 if __name__ == "__main__":
     prefix_file_name = _update_file(
-        src_prefix="KEY TO ABBREVIATIONS AND BSB NUMBERS", src_type=".csv", dest="static/bsb_prefix_rules.csv"
+        src_prefix="KEY TO ABBREVIATIONS AND BSB NUMBERS", src_type=".csv", dest="/src/bsb/static/bsb_prefix_rules.csv"
     )
-    directory_file_name: str = _update_file(src_prefix="BSBDirectory", src_type=".csv", dest="static/bsb_directory.csv")
+    directory_file_name: str = _update_file(
+        src_prefix="BSBDirectory", src_type=".csv", dest="/src/bsb/static/bsb_directory.csv"
+    )
     with open(os.environ["GITHUB_OUTPUT"], "a") as output:
         print(f"bsb_prefix_file={prefix_file_name}", file=output)
         print(f"bsb_directory_file={directory_file_name}", file=output)
