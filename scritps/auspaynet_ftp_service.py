@@ -1,4 +1,5 @@
-from ftplib import FTP
+# from ftplib import FTP
+import pysftp
 BASE_DIR = "/~auspaynetftp/bsb"
 
 
