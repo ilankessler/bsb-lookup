@@ -24,7 +24,11 @@ def test_valid_format_bsb():
     """Ensure that a valid BSB returns a BankInfo object."""
     result = to_bank_info(bsb="082055")
     assert result == BankInfo(
-        prefix_rule=BSBPrefixRule(key="NAB", abbreviation="National Australia Bank Limited", bsb_prefixes=["08"]),
+        prefix_rule=BSBPrefixRule(
+            key="NAB",
+            abbreviation="National Australia Bank Limited",
+            bsb_prefixes=["08"],
+        ),
         directory_entry=BSBDirectoryRow(
             bsb="082055",
             financial_institution_code="NAB",
@@ -42,7 +46,9 @@ def test_valid_format_bsb():
 def test_not_found():
     """Ensure that a BSB that is not found returns None."""
     result = to_bank_info(bsb="000000")
-    assert result == BankInfo(prefix_rule=None, directory_entry=None, npp_support=NPPSupport.UNKNOWN)
+    assert result == BankInfo(
+        prefix_rule=None, directory_entry=None, npp_support=NPPSupport.UNKNOWN
+    )
 
 
 def test_csv_data_sane():
