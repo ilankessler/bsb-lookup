@@ -35,6 +35,7 @@ def to_bank_info(bsb: str) -> BankInfo:
     Returns:
     -------
         BankInfo: The bank information for the given BSB number.
+
     """
     return BankInfo(
         prefix_rule=to_bsb_prefix_rule(bsb=bsb),
