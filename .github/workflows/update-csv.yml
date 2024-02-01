@@ -22,7 +22,7 @@ jobs:
         run: python .github/workflows/scripts/csv_update.py
       - id: get-date
         run: echo "date=$(date +'%B-%Y')" >> $GITHUB_OUTPUT
-      - uses: peter-evans/create-pull-request@v5
+      - uses: peter-evans/create-pull-request@v6
         id: raise-pr
         with:
           branch: "bot/automate-ftp/${{ steps.get-date.outputs.date }}"
