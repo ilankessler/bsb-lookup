@@ -1,4 +1,6 @@
 name: Update BSB Directory and Prefix Files
+env:
+  GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
 
 on:
   schedule:
