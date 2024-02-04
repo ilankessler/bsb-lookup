@@ -17,11 +17,7 @@ def fetch_latest_file(prefix: str, file_type: str) -> tuple[bytearray, str]:
         ordered_files = sorted(files, reverse=True, key=lambda x: x[1]["modify"])
 
         matching_filename = next(
-            (
-                filename
-                for filename, _ in ordered_files
-                if filename.startswith(prefix) and filename.endswith(file_type)
-            ),
+            (filename for filename, _ in ordered_files if filename.startswith(prefix) and filename.endswith(file_type)),
             None,
         )
 
@@ -29,8 +25,6 @@ def fetch_latest_file(prefix: str, file_type: str) -> tuple[bytearray, str]:
             raise Exception(f"Unable to find matching file, file_prefix={prefix}, file_type={file_type}")
 
         bytes_file = bytearray()
-        ftp.retrbinary(
-            f"RETR {BASE_DIR}/{matching_filename}", lambda data: bytes_file.extend(data)
-        )
+        ftp.retrbinary(f"RETR {BASE_DIR}/{matching_filename}", lambda data: bytes_file.extend(data))
 
         return bytes_file, matching_filename
