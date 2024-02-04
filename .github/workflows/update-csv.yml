@@ -1,6 +1,4 @@
 name: Update BSB Directory and Prefix Files
-env:
-  GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
 
 on:
   schedule:
@@ -26,6 +24,8 @@ jobs:
         run: echo "date=$(date +'%B-%Y')" >> $GITHUB_OUTPUT
       - uses: peter-evans/create-pull-request@v6
         id: raise-pr
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
         with:
           branch: "bot/automate-ftp/${{ steps.get-date.outputs.date }}"
           title: "chore: update bsb directory with ${{ steps.get-date.outputs.date }} data"
