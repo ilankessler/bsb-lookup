@@ -67,4 +67,7 @@ def _parse_row_to_bsb_str(row: list[str]) -> str:
 
 def _parse_bsb_prefix_rule(row: list[str]) -> BSBPrefixRule:
     key, abbreviation, bsb_prefixes = row
-    return BSBPrefixRule(key=key, abbreviation=abbreviation, bsb_prefixes=bsb_prefixes.split(","))
+
+    cleaned_bsb_prefixes = [f"0{prefix}" if len(prefix) == 1 else prefix for prefix in bsb_prefixes.split(",")]
+
+    return BSBPrefixRule(key=key, abbreviation=abbreviation, bsb_prefixes=cleaned_bsb_prefixes)
