@@ -26,7 +26,7 @@ dynamic = ["version"]
 test = [
     "check-manifest==0.49",
     "ruff==0.2.0",
-    "mypy==1.8.0",
+    "mypy==1.9.0",
     "pre-commit==3.6.0",
     "pytest==8.1.0"
 ]
