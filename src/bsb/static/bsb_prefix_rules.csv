@@ -39,6 +39,7 @@ CBA,TBT Commonwealth Bank of Australia,"42, 52"
 CUA,Credit Union Australia Ltd (trading as Great Southern Bank),814
 CUA,GSB Credit Union Australia Ltd (trading as Great Southern Bank),834
 CRU,Cuscal Limited,80
+CRU,HPC Cuscal Limited,671
 DBS,DBS Bank Ltd. (Australia Branch),889
 DBA,Deutsche Bank Aktiengesellschaft,41
 DBL,Defence Bank Limited,833
@@ -61,7 +62,6 @@ CUS,Indue Ltd,70
 IBK,Industrial and Commercial Bank of China Limited,819
 ING,ING Bank (Australia) Limited (trading as ING),923
 GNI,"ING Bank, NV (Sydney Branch)",936
-IBG,Islamic Bank Australia Pty Ltd,690
 CMB,"JP Morgan Chase Bank, National Association",21
 JUD,Judo Bank Pty Ltd,725
 KEB,KEB Hana Bank,323
@@ -71,6 +71,7 @@ MMP,Unity Bank Limited,882
 BAU,Bank Australia Limited,313
 ICB,"Mega International Commercial Bank Co, Ltd",931
 MCB,"Mizuho Bank, Ltd",918
+MON,Monoova Payments Pty Ltd,257
 MSL,Tyro Payments Limited,969
 NAB,National Australia Bank Limited,8
 NEW,Newcastle Greater Mutual Group Ltd,650
@@ -87,6 +88,7 @@ RCU,Railways Credit Union Limited t/a MOVE Bank,724
 RAB,Regional Australia Bank Limited,932
 RAB,HCC Regional Australia Bank Limited,721
 RBA,Reserve Bank of Australia,9
+REV,Revolut Payments Australia Pty Ltd,772
 ROK,MyState Bank Limited,655
 SCB,"Standard Chartered Bank, Australia Branch",43
 SNX,Southern Cross Credit Union Ltd,722
@@ -114,4 +116,4 @@ WBC,CBL Challenge Bank (a division of Westpac Banking Corp),47
 WBC,BML Bank of Melbourne (a division of Westpac Banking Corp),55
 WCU,Warwick Credit Union Ltd,817
 WSE,Wise Australia Pty Ltd,774
-YOU,86400 Holdings Pty Ltd (Acquired by NAB),670
+YOU,National Australia Bank Limited,670
