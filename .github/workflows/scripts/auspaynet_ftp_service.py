@@ -1,4 +1,5 @@
 """Provides a function to determine the most recent file posted on auspaynet ftp and retrieve it."""
+
 from ftplib import FTP
 
 BASE_DIR = "/~auspaynetftp/bsb"

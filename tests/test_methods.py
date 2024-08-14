@@ -1,4 +1,5 @@
 """Tests for the methods module."""
+
 from __future__ import annotations
 
 import pytest
