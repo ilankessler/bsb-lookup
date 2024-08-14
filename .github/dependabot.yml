@@ -12,7 +12,7 @@ updates:
   - dependency-type: direct
   - dependency-type: indirect
   commit-message:
-    prefix: "fix: "
+    prefix: "chore: "
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
