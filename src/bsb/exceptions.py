@@ -2,14 +2,12 @@
 
 
 class InvalidBSBException(Exception):
-
     """Base class for exceptions raised by this package."""
 
     pass
 
 
 class InvalidBSBFormatException(InvalidBSBException):
-
     """Raised when the BSB number is not in a valid format."""
 
     def __init__(self, bsb: str):

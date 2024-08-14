@@ -11,7 +11,6 @@ from bsb.parser import _parse_npp_unsupported_csv
 
 
 class DataSet:
-
     """Cached data sets for the BSB library. Allows lazy loading of the data in from csv only when it is requested."""
 
     @cached_property

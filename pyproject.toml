@@ -47,8 +47,7 @@ extend-exclude = ['pydantic/v1', 'tests/mypy/outputs']
 
 [tool.ruff.lint]
 extend-select = ['Q', 'RUF100', 'C90', 'UP', 'I', 'D', 'T']
-ignore = ['D105', 'D107', 'D205', 'D415', 'D211', "D213"]
+ignore = ['D105', 'D107', 'D205', 'D415', 'D203', 'D211', "D213"]
 flake8-quotes = { inline-quotes = 'double', multiline-quotes = 'double' }
 mccabe = { max-complexity = 14 }
 isort = { known-first-party = ['pydantic', 'tests'], force-single-line = true }
-ignore-init-module-imports = true
