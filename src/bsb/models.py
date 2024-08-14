@@ -10,7 +10,6 @@ BSBPaymentsFlag = Literal["P", "PE", "PEH", "E", "EH", ""]
 
 @dataclass
 class BSBDirectoryRow:
-
     """A row from the /static/bsb_directory.csv file."""
 
     bsb: str
@@ -25,7 +24,6 @@ class BSBDirectoryRow:
 
 @dataclass
 class BSBPrefixRule:
-
     """The prefix rule for a given bank abbreviation - represents a row from the /static/bsb_prefix_rules.csv file."""
 
     key: str
@@ -34,7 +32,6 @@ class BSBPrefixRule:
 
 
 class NPPSupport(str, Enum):
-
     """The NPP support status of a given BSB.
     LIKELY_UNSUPPORTED is "likely" because the institution may have supported it since the last time we updated the
     package.
@@ -47,7 +44,6 @@ class NPPSupport(str, Enum):
 
 @dataclass
 class BankInfo:
-
     """The information for a given BSB number."""
 
     prefix_rule: BSBPrefixRule | None

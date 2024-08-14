@@ -1,4 +1,5 @@
 """Used to update the .csv files that store BSB prefixes and the directory of BSBs."""
+
 import os
 
 from auspaynet_ftp_service import fetch_latest_file
