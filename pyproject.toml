@@ -7,7 +7,7 @@ name = "bsb-lookup"
 authors = [
     { name = "Ilan Kessler", email = "ilan@refundid.com" },
 ]
-description = "Sample Python Project for creating a new Python Module"
+description = "Lookup and enrich Australian BSBs"
 readme = "README.md"
 classifiers = [
     "Development Status :: 3 - Alpha",
