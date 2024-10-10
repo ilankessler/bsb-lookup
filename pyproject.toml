@@ -25,7 +25,7 @@ dynamic = ["version"]
 [project.optional-dependencies]
 test = [
     "check-manifest==0.50",
-    "ruff==0.5.7",
+    "ruff==0.6.9",
     "mypy==1.11.1",
     "pre-commit==4.0.1",
     "pytest==8.3.3"
