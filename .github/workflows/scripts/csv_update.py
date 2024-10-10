@@ -1,26 +1,43 @@
 """Used to update the .csv files that store BSB prefixes and the directory of BSBs."""
 
+import http.client
 import os
+import urllib.parse
 
-from auspaynet_ftp_service import fetch_latest_file
+_STATIC_BSB_DIRECTORY_URL = "https://bsb.auspaynet.com.au/Public/BSB_DB.NSF/getBSBFullCSV?OpenAgent"
 
 
-def _update_file(src_prefix: str, src_type: str, dest: str) -> str:
-    file_bytes, file_name = fetch_latest_file(prefix=src_prefix, file_type=src_type)
+def _update_bsb_directory_file() -> str:
+    parsed_url = urllib.parse.urlparse(_STATIC_BSB_DIRECTORY_URL)
 
-    with open(dest, "wb") as f:
+    conn = http.client.HTTPSConnection(parsed_url.netloc)
+
+    conn.request("GET", parsed_url.path + "?" + parsed_url.query)
+    response = conn.getresponse()
+
+    if response.status != 302:
+        raise Exception(f"Unexpected response status: {response.status}")
+
+    redirect_url = response.getheader("Location")
+    assert redirect_url is not None
+
+    parsed_redirect_url = urllib.parse.urlparse(redirect_url)
+
+    file_name = os.path.basename(parsed_redirect_url.path)
+
+    conn = http.client.HTTPSConnection(parsed_redirect_url.netloc)
+    conn.request("GET", parsed_redirect_url.path)
+    response = conn.getresponse()
+
+    file_bytes = response.read()
+
+    with open("./src/bsb/static/bsb_directory.csv", "wb") as f:
         f.write(file_bytes)
 
     return file_name
 
 
 if __name__ == "__main__":
-    prefix_file_name = _update_file(
-        src_prefix="KEY TO ABBREVIATIONS AND BSB NUMBERS", src_type=".csv", dest="./src/bsb/static/bsb_prefix_rules.csv"
-    )
-    directory_file_name: str = _update_file(
-        src_prefix="BSBDirectory", src_type=".csv", dest="./src/bsb/static/bsb_directory.csv"
-    )
+    directory_file_name: str = _update_bsb_directory_file()
     with open(os.environ["GITHUB_OUTPUT"], "a") as output:
-        print(f"bsb_prefix_file={prefix_file_name}", file=output)
         print(f"bsb_directory_file={directory_file_name}", file=output)
