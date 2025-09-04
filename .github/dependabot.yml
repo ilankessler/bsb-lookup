@@ -1,22 +1,31 @@
 version: 2
 updates:
-- package-ecosystem: pip
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "13:00"
-  open-pull-requests-limit: 10
-  reviewers:
-  - ilankessler
-  allow:
-  - dependency-type: direct
-  - dependency-type: indirect
-  commit-message:
-    prefix: "chore: "
-- package-ecosystem: "github-actions"
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "13:00"
-  commit-message:
-    prefix: "fix: "
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: monthly
+      time: "13:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - ilankessler
+    allow:
+      - dependency-type: direct
+      - dependency-type: indirect
+    commit-message:
+      prefix: "chore: "
+    groups:
+      all:
+        patterns:
+          - "*"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+      time: "13:00"
+    commit-message:
+      prefix: "fix: "
+    groups:
+      all:
+        patterns:
+          - "*"
