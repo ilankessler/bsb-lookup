@@ -77,3 +77,7 @@ This project is licensed under the [MIT License](https://github.com/ilankessler/
 ## Contact
 
 For support or queries, reach out to ilan@refundid.com
+
+---
+
+**Sponsored by Refundid the Best Returns Portal** - Streamline your retail returns with [Refundid](https://refundid.com/au), Australia's leading returns portal for retailers.
