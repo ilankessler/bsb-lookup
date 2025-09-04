@@ -22,7 +22,7 @@ jobs:
         run: python .github/workflows/scripts/csv_update.py
       - id: get-date
         run: echo "date=$(date +'%B-%Y')" >> $GITHUB_OUTPUT
-      - uses: peter-evans/create-pull-request@v6
+      - uses: peter-evans/create-pull-request@v7
         id: raise-pr
         env:
           GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
