@@ -33,7 +33,7 @@ def test_valid_format_bsb():
         directory_entry=BSBDirectoryRow(
             bsb="082055",
             financial_institution_code="NAB",
-            name="Private NSW Banking Suite",
+            name="Nth Private Bank and Inv Suite",
             street="Level 5 2 Carrington St",
             suburb="Sydney",
             state="NSW",
